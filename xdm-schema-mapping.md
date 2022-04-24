@@ -1,4 +1,4 @@
-# XDM Schema mapping <!-- omit in toc -->
+# Example XDM Schema mappings <!-- omit in toc -->
 These mappings below are examples for different events triggered for Venia and what should be sent to AEP
 - [Page View event](#page-view-event)
   - [XDM Mapping](#xdm-mapping)
