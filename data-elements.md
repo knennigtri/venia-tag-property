@@ -1,4 +1,5 @@
 # Data Elements <!-- omit in toc -->
+The data elements defined below are all apart of the data layer and most are from the Adobe Client Data Layer. Each element defined below is labeled by project that exposes the data for that element.
 - [Helper Elements](#helper-elements)
   - [Helper Code Snippet](#helper-code-snippet)
 - [Browser Elements](#browser-elements)
@@ -25,12 +26,13 @@ These are helper elements to other data elements
 /*
 * This method can get core components from the ACDL via eventInfo.path or by first occurance
 * Example 1. With an event that contains event.message.eventInfo.path value (core cmp event)
-*   var cmpProperty = getCmpProperty(event);
+*   var cmpProperties = getCoreCmpJson(event);
 * Example 2. It can be used to get the page component properties even if the event was not triggered by the page
-*   var pageCmpProperty = getCmpProperty(event, "page");
-* Example 3. It can be used to get the first cmp instance of a specified component on the page. 
-*   var productCmpProperty = getCmpProperty(event, "component", "product");
-* returns an JSON object that contains the 
+*   var pageCmpProperties = getCoreCmpJson(event, "page");
+* Example 3. It can be used to get the first cmp instance of a specified component on the page
+*   var productCmpProperty = getCoreCmpJson(event, "component", "product");
+* 
+* returns a JSON object that contains:
 *    this.path - the unique component path in the ACDL
 *    this.component - the component json
 */
@@ -132,7 +134,6 @@ if(pathNames.length > 1){
     return sections[1];
   }
 }
-
 // if a subsection is not found return ""
 return "";
 ```
@@ -276,27 +277,29 @@ if(coreCmpJSON.component && coreCmpJSON.component.hasOwnProperty(property)) {
 
 ## Magento Events SDK Elements
 https://github.com/adobe/magento-storefront-events-sdk
-| Name                        | Extension               | Data Element Type         | Value                        |
-| --------------------------- | ----------------------- | ------------------------- | ---------------------------- |
-| categoryContext.name        | Adobe Client Data Layer | Data Layer Computed State | categoryContext.name         |
-| categoryContext.urlKey      | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlKey       |
-| categoryContext.urlPath     | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlPath      |
-| productContext.name         | Adobe Client Data Layer | Data Layer Computed State | productContext.name          |
-| productContext.productId    | Adobe Client Data Layer | Data Layer Computed State | productContext.productId     |
-| productContext.sku          | Adobe Client Data Layer | Data Layer Computed State | productContext.sku           |
-| shopperContext.shopperId    | Adobe Client Data Layer | Data Layer Computed State | shopperContext.shopperId     |
-| accountContext.emailAddress | Adobe Client Data Layer | Data Layer Computed State | saccountContext.emailAddress |
-| accountContext.firstName    | Adobe Client Data Layer | Data Layer Computed State | saccountContext.firstName    |
-| accountContext.lastName     | Adobe Client Data Layer | Data Layer Computed State | saccountContext.lastName     |
-| accountContext.phoneNumber  | Adobe Client Data Layer | Data Layer Computed State | saccountContext.phoneNumber  |
+| Name                        | Extension               | Data Element Type         | Value                       |
+| --------------------------- | ----------------------- | ------------------------- | --------------------------- |
+| categoryContext.name        | Adobe Client Data Layer | Data Layer Computed State | categoryContext.name        |
+| categoryContext.urlKey      | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlKey      |
+| categoryContext.urlPath     | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlPath     |
+| productContext.name         | Adobe Client Data Layer | Data Layer Computed State | productContext.name         |
+| productContext.productId    | Adobe Client Data Layer | Data Layer Computed State | productContext.productId    |
+| productContext.sku          | Adobe Client Data Layer | Data Layer Computed State | productContext.sku          |
+| shopperContext.shopperId    | Adobe Client Data Layer | Data Layer Computed State | shopperContext.shopperId    |
+| accountContext.emailAddress | Adobe Client Data Layer | Data Layer Computed State | accountContext.emailAddress |
+| accountContext.firstName    | Adobe Client Data Layer | Data Layer Computed State | accountContext.firstName    |
+| accountContext.lastName     | Adobe Client Data Layer | Data Layer Computed State | accountContext.lastName     |
+| accountContext.phoneNumber  | Adobe Client Data Layer | Data Layer Computed State | accountContext.phoneNumber  |
+| searchInputContext.*        | Adobe Client Data Layer | Data Layer Computed State | //TODO searchInputContext        |
+| searchResponseContext.*     | Adobe Client Data Layer | Data Layer Computed State | //TODO searchResponseContext     |
 
 ## XDM Schema Elements
 These data elements are example mappings for the AEP Web SDK.
-| Name              | Extension                         | Data Element Type | Value                      |
-| ----------------- | --------------------------------- | ----------------- | -------------------------- |
-| xdm-pageViews     | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
-| xdm-productViews  | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
-| xdm-onClick       | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
-| xdm-addToCart     | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
-| xdm-addToWishList | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() | 
-| xdm-purchaseConfirmation | Adobe Experience Platform Web SDK | XDM object | See [xdm-schema-mapping]() |
+| Name                     | Extension                         | Data Element Type | Value                      |
+| ------------------------ | --------------------------------- | ----------------- | -------------------------- |
+| xdm-pageViews            | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
+| xdm-productViews         | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
+| xdm-onClick              | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
+| xdm-addToCart            | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
+| xdm-addToWishList        | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
+| xdm-purchaseConfirmation | Adobe Experience Platform Web SDK | XDM object        | See [xdm-schema-mapping]() |
