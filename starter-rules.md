@@ -1,7 +1,7 @@
 # Starter Rules
 Thhe starter rules below listen for specific events in the ACDL and then fire. Once the rule fires, the Rule Actions can be defined for your specific implementation of AEP, Target, Analytics or other 3rd party endpoint configured in AEP Tags.
 
-| Rule Name          | //TODO Event Ext | Specific Event     | Condition                         | Exclusive Data Elements                    |
+| Rule Name          | <!--TODO--> Event Ext | Specific Event     | Condition                         | Exclusive Data Elements                    |
 | ------------------ | ---------------- | ------------------ | --------------------------------- | ------------------------------------------ |
 | Page View          | Core (Page Load) |                    |                                   |                                            |
 | Product Page View  | ACDL ()          | product-page-view  |                                   | productPageCmp.                            |

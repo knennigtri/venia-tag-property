@@ -290,8 +290,8 @@ https://github.com/adobe/magento-storefront-events-sdk
 | accountContext.firstName    | Adobe Client Data Layer | Data Layer Computed State | accountContext.firstName    |
 | accountContext.lastName     | Adobe Client Data Layer | Data Layer Computed State | accountContext.lastName     |
 | accountContext.phoneNumber  | Adobe Client Data Layer | Data Layer Computed State | accountContext.phoneNumber  |
-| searchInputContext.*        | Adobe Client Data Layer | Data Layer Computed State | //TODO searchInputContext        |
-| searchResponseContext.*     | Adobe Client Data Layer | Data Layer Computed State | //TODO searchResponseContext     |
+| searchInputContext.*        | Adobe Client Data Layer | Data Layer Computed State | <!--TODO--> searchInputContext        |
+| searchResponseContext.*     | Adobe Client Data Layer | Data Layer Computed State | <!--TODO--> searchResponseContext     |
 
 ## XDM Schema Elements
 These data elements are example mappings for the AEP Web SDK.
