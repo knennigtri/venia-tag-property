@@ -14,7 +14,7 @@ A few general points for this Tag property project:
    * Magento Events SDK: https://github.com/adobe/magento-storefront-events-sdk 
  * WKND uses a single project to build it's data layer:
    * WCM core components: https://github.com/adobe/aem-core-wcm-components 
- * //TODO Extensions were sparenly used to make this implementation as simple as possible. Each data element defined specifies which extension was used. In total, these extensions were used:
+ * <!-- TODO --> Extensions were sparenly used to make this implementation as simple as possible. Each data element defined specifies which extension was used. In total, these extensions were used:
    * Core
    * ECID
    * Adobe Client Data Layer
@@ -26,5 +26,6 @@ A few general points for this Tag property project:
 In this documentation:
  * [Data Elements](data-elements.md) exposed from the ACDL
  * [Starter Rules](starter-rules.md)
+ * [ACDL Object triggers](acdl-object-triggers.md)
  * [Example XDM mappings](xdm-schema-mapping.md)
  * [Example Analytics Variables](analytics-variables.md)
