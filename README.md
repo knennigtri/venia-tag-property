@@ -31,14 +31,26 @@ In this documentation:
 
 ## Installing the Venia web property
 
-1. Install npm if not already installed
-2. install the AEP tag tool
-```
- npm install -g @knennigtri/aep-tag-tool
-```
-3. Create and Adobe IO project with Launch API added
-4. Download [example.config.yml](https://github.com/knennigtri/aep-tag-tool/blob/main/example.config.yml) and add your credentials from the AOI project
-5. Create a new AEP Tag property. 
+1. Create and [Adobe IO project](https://developer.adobe.com/dep/guides/dev-console/create-project/)
+   1. Add the Experiance Platform Launch API
+      1. Generate a public/private key pair
+      2. Download the public/private key
+   2. Go to Service Account (JWT)
+      1. In the top right click **Download JSON**
+      2. Update downloaded file to `config.json`
+   3. Update `config.json` to include the path to the private.key you downloaded earlier.
+    ```JSON
+    {
+      "CLIENT_SECRET": "xxxxxxxxxxxxxxxxxxxxx",
+      "ORG_ID": "xxxxxxxxxxxxxxxxxxxxx@AdobeOrg",
+      "API_KEY": "xxxxxxxxxxxxxxxxxxxxx",
+      "TECHNICAL_ACCOUNT_ID": "xxxxxxxxxxxxxxxxxxxxx@techacct.adobe.com",
+      "TECHNICAL_ACCOUNT_EMAIL": "xxxxxxxxxxxxxxxxxxxxx@techacct.adobe.com",
+      "PRIVATE_Key": "path/to/private.key",
+      "PUBLIC_KEYS_WITH_EXPIRY": {}
+    }
+    ```
+2. Create a new [AEP Tag property](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/create-launch-property.html?lang=en). 
    1. Take note of the PID from the URL: P12341234123123123123
    2. Install these plugins:
       1. Experience Cloud ID
@@ -47,9 +59,14 @@ In this documentation:
       4. Adobe Target v2
       5. Adobe Analytics
       6. Adobe Analytics Product String
-6. Download [venia-property.json](venia-property.json)
-7. Import the venia data elements and starter rules into your property:
+3. Download [venia-property.json](venia-property.json)
+4. Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if not already installed
+5. Install the AEP tag tool
 ```
- aep-tag-tool -c yourConfig.yml --import venia-property.json -p <yourPID> -DR
+ npm install -g @knennigtri/aep-tag-tool
+```
+1. Import the venia data elements and starter rules into your property:
+```
+ aep-tag-tool -c config.json --import venia-property.json -p <yourPID> -DR
 ```
 
