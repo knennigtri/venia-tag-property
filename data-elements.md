@@ -277,21 +277,40 @@ if(coreCmpJSON.component && coreCmpJSON.component.hasOwnProperty(property)) {
 
 ## Magento Events SDK Elements
 https://github.com/adobe/magento-storefront-events-sdk
-| Name                        | Extension               | Data Element Type         | Value                       |
-| --------------------------- | ----------------------- | ------------------------- | --------------------------- |
-| categoryContext.name        | Adobe Client Data Layer | Data Layer Computed State | categoryContext.name        |
-| categoryContext.urlKey      | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlKey      |
-| categoryContext.urlPath     | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlPath     |
-| productContext.name         | Adobe Client Data Layer | Data Layer Computed State | productContext.name         |
-| productContext.productId    | Adobe Client Data Layer | Data Layer Computed State | productContext.productId    |
-| productContext.sku          | Adobe Client Data Layer | Data Layer Computed State | productContext.sku          |
-| shopperContext.shopperId    | Adobe Client Data Layer | Data Layer Computed State | shopperContext.shopperId    |
-| accountContext.emailAddress | Adobe Client Data Layer | Data Layer Computed State | accountContext.emailAddress |
-| accountContext.firstName    | Adobe Client Data Layer | Data Layer Computed State | accountContext.firstName    |
-| accountContext.lastName     | Adobe Client Data Layer | Data Layer Computed State | accountContext.lastName     |
-| accountContext.phoneNumber  | Adobe Client Data Layer | Data Layer Computed State | accountContext.phoneNumber  |
-| searchInputContext.*        | Adobe Client Data Layer | Data Layer Computed State | <!--TODO--> searchInputContext        |
-| searchResponseContext.*     | Adobe Client Data Layer | Data Layer Computed State | <!--TODO--> searchResponseContext     |
+| Name                           | Extension               | Data Element Type         | Value                                   |
+| ------------------------------ | ----------------------- | ------------------------- | --------------------------------------- |
+| categoryContext.name           | Adobe Client Data Layer | Data Layer Computed State | categoryContext.name                    |
+| categoryContext.urlKey         | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlKey                  |
+| categoryContext.urlPath        | Adobe Client Data Layer | Data Layer Computed State | categoryContext.urlPath                 |
+| productContext.name            | Adobe Client Data Layer | Data Layer Computed State | productContext.name                     |
+| productContext.productId       | Adobe Client Data Layer | Data Layer Computed State | productContext.productId                |
+| productContext.sku             | Adobe Client Data Layer | Data Layer Computed State | productContext.sku                      |
+| shopperContext.shopperId       | Adobe Client Data Layer | Data Layer Computed State | shopperContext.shopperId                |
+| accountContext.emailAddress    | Adobe Client Data Layer | Data Layer Computed State | accountContext.emailAddress             |
+| accountContext.firstName       | Adobe Client Data Layer | Data Layer Computed State | accountContext.firstName                |
+| accountContext.lastName        | Adobe Client Data Layer | Data Layer Computed State | accountContext.lastName                 |
+| accountContext.phoneNumber     | Adobe Client Data Layer | Data Layer Computed State | accountContext.phoneNumber              |
+| searchInputContext.*           | Adobe Client Data Layer | Data Layer Computed State | searchInputContext.units[0].*           |
+| searchInputContext.phrase      | Adobe Client Data Layer | Data Layer Computed State | searchInputContext.units[0].phrase      |
+| searchResponseContext.*        | Adobe Client Data Layer | Data Layer Computed State | searchResponseContext.units[0].*        |
+| searchResponseContext.products | Adobe Client Data Layer | Data Layer Computed State | searchResponseContext.units[0].products |
+
+The products returned from Search are in the form of an array:
+```
+searchResponseContext.units[0].products[
+    {
+        "url": "",
+        "rank": 0,
+        "price": 0,
+        "sku": "",
+        "imageUrl": "",
+        "name": ""
+    },
+    {...},
+    {...},
+    {...}
+]
+```
 
 ## XDM Schema Elements
 These data elements are example mappings for the AEP Web SDK.

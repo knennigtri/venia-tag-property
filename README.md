@@ -69,4 +69,3 @@ In this documentation:
 ```
  aep-tag-tool -c config.json --import venia-property.json -p <yourPID> -DR
 ```
-
