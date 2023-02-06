@@ -1,8 +1,7 @@
-# AEM Tag Property demo
-//TODO add link
-Check out the [medium article]() for this proof of concept
+### Check out the [story](https://medium.com/@knennigtri/adobe-client-data-layer-just-works-e0a706bca6f9) behind this project. 
 
-This is an example property definition on how to setup a Adobe Expierence Platform Tag (previously Adobe Launch) for an AEM website using WCM core components, CIF core components, and Magento events SDK. This tutorial is valid for the following reference websites:
+# Venia Tag Property Project
+This is an example web property definition on how to setup a Adobe Expierence Platform Tag (previously Adobe Launch) for an AEM website using WCM core components, CIF core components, and Magento events SDK. This tutorial is valid for the following reference websites:
  * [Venia](https://github.com/adobe/aem-cif-guides-venia) with WCM and CIF core components
  * [WKND](https://github.com/adobe/aem-guides-wknd) with WCM core components
 
